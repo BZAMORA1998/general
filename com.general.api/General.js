@@ -3,6 +3,8 @@ const mysql=require("mysql");
 const myconn=require("express-myconnection");
 const app=express()
 const generalImpl=require('../com.general.impl/GeneralImpl')
+const cors = require('cors')
+app.use(cors())
 
 app.set('port',process.env.PORT||9000)
 const dbOptions={
