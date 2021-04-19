@@ -1,23 +1,9 @@
-const express=require("express");
-const mysql=require("mysql");
-const myconn=require("express-myconnection");
-const app=express()
 const generalImpl=require('../com.general.impl/GeneralImpl')
-const cors = require('cors')
-app.use(cors())
+const configuracion=require('../com.general.configuracion/Configuracion')
+const cf=new configuracion();
+const app=cf.configuracion();
 
-app.set('port',process.env.PORT||9000)
-const dbOptions={
-    host:'db4free.net',
-    port:'3306',
-    user:'zamora',
-    password:'25021998bszl_',
-    database:'sistemas2020'
-}
-
-app.use(myconn(mysql,dbOptions,'single'));
-//app.use(express.json);
-
+//Router General del sistema /general/
 app.use('/general',generalImpl);
 
 app.listen(app.get('port'),()=>{
