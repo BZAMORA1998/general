@@ -2,9 +2,9 @@
   "name": "general",
   "version": "1.0.0",
   "description": "",
-  "main": "./com.general.api/general.js",
+  "main": "com.general.api/general.js",
   "scripts": {
-    "start": "node ./com.general.api/general.js"
+    "start": "node com.general.api/general.js"
   },
   "keywords": [],
   "author": "",
