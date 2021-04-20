@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./com.general.api/general.js"
+    "start": "node ./app/com.general.api/general.js"
   },
   "keywords": [],
   "author": "",
