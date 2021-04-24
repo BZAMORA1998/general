@@ -1,8 +1,8 @@
-class Configuracion {
+class Tool {
     constructor() {
 	}
 
-    configuracion() {
+    tool() {
 
         const express=require("express");
         const mysql=require("mysql");
@@ -26,11 +26,11 @@ class Configuracion {
         app.use(cors())
 
         //Declara en que puerto de quiere trabajar
-        app.set('port',process.env.PORT||8081)
+        app.set('port',process.env.PORT||8083)
 
         return app;
 
 	} 
 }
 
-module.exports = Configuracion;
+module.exports = Tool;

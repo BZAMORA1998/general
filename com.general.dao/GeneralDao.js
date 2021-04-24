@@ -1,13 +1,13 @@
 
 const TipoIdentificacionDTO = require("../com.general.dto/TipoIdentificacionDTO");
-const Response200 = require("../com.general.dto/Response200");
 
 class GeneralDao {
     
     constructor() {
+        
 	}
 
-    consultaTiposIdentificacion(req,res){
+    consultaTiposIdentificacionDao(req,res,callback){
         req.getConnection((err,conn)=>{
             if(err)return res.send(err);
 
@@ -27,7 +27,7 @@ class GeneralDao {
                         r.es_activo);
                     arr1.push(objTipoIdentificacionDTO);
                 });
-                res.json(new Response200("0k",arr1));
+                return callback(arr1);
             });
         });
     }
