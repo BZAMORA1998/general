@@ -17,7 +17,7 @@ class GeneralDao {
             req.getConnection((err,conn)=>{
                 if(err)return res.send(new Response500(err.message,err));
 
-                let query="SELECT *FROM tbl_tipos_identificacion"
+                let query="SELECT *FROM tbl_tipos_identificacion pa"
                         +" WHERE pa.es_activo='S'";
 
                 conn.query(query,(err,rows)=>{
@@ -47,7 +47,7 @@ class GeneralDao {
             req.getConnection((err,conn)=>{
                 if(err)return res.send(new Response500(err.message,err));
 
-                let query="SELECT *FROM tbl_generos"
+                let query="SELECT *FROM tbl_generos pa"
                         +" WHERE pa.es_activo='S'";
 
                 conn.query(query,(err,rows)=>{

@@ -39,12 +39,12 @@ class GeneralController {
             var secuenciaProvincia = req.params.secuenciaProvincia;
 
             //Valida que el campo secuenciaPais no sea null o vacio
-            if(secuenciaPais==null || secuenciaPais=="" || secuenciaPais<=0 ){
+            if(secuenciaPais==null || secuenciaPais=="" || secuenciaPais<=0 || secuenciaPais==undefined){
                 throw new BOException("La secuencia de pais es requerido.");
             }
 
             //Valida que el campo secuenciaProvincia no sea null o vacio
-            if(secuenciaProvincia==null || secuenciaProvincia=="" || secuenciaProvincia<=0 ){
+            if(secuenciaProvincia==null || secuenciaProvincia=="" || secuenciaProvincia<=0 || secuenciaProvincia==undefined){
                 throw new BOException("La secuencia de la provincia es requerido.");
             }
 
@@ -71,7 +71,7 @@ class GeneralController {
             var secuenciaPais = req.params.secuenciaPais;
 
             //Valida que el campo secuenciaPais no sea null o vacio
-            if(secuenciaPais==null || secuenciaPais=="" || secuenciaPais<=0 ){
+            if(secuenciaPais==null || secuenciaPais=="" || secuenciaPais<=0 || secuenciaPais==undefined){
                 throw new BOException("La secuencia de pais es requerido.");
             }
 
