@@ -12,5 +12,12 @@ class GeneralController {
             return callback(r);
         });
     }
+
+    consultaGeneroController(req,res,callback){
+        var generalDao=new GeneralDao();
+        generalDao.consultaGeneroDao(req,res,function(r){
+            return callback(r);
+        });
+    }
 }
 module.exports = GeneralController;

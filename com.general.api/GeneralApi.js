@@ -10,4 +10,11 @@ generalApi.get('/tipoIdentificacion',(req,res)=>{
     });
 });
 
+generalApi.get('/genero',(req,res)=>{
+    var generalController=new GeneralController();
+    generalController.consultaGeneroController(req,res,function(r){
+        return res.send(new Response200("OK",r));
+    });
+});
+
 module.exports=generalApi;
