@@ -17,6 +17,13 @@ class GeneralController {
         });
     }
 
+    consultaModulosController(req,res,callback){
+        var generalDao=new GeneralDao();
+        generalDao.consultaModulosController(req,res,function(r){
+            return callback(r);
+        });
+    }
+
     consultaGeneroController(req,res,callback){
         var generalDao=new GeneralDao();
         generalDao.consultaGeneroDao(req,res,function(r){

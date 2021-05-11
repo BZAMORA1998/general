@@ -42,4 +42,11 @@ generalApi.get('/ciudad/:secuenciaPais/:secuenciaProvincia',(req,res)=>{
     });
 });
 
+generalApi.get('/modulos',(req,res)=>{
+    var generalController=new GeneralController();
+    generalController.consultaModulosController(req,res,function(r){
+        return res.send(new Response200("OK",r));
+    });
+});
+
 module.exports=generalApi;

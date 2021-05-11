@@ -5,6 +5,7 @@ const PaisDTO=require("../com.general.dto/PaisDTO");
 const ProvinciaDTO=require("../com.general.dto/ProvinciaDTO");
 const CiudadDTO=require("../com.general.dto/CiudadDTO");
 const Response500 = require("../com.general.dto/Response500");
+const ModuloDTO = require("../com.general.dto/ModuloDTO");
 
 class GeneralDao {
     
@@ -153,6 +154,34 @@ class GeneralDao {
                             r.secuencia_ciudad,
                             r.nombre);
                         arr1.push(objCiudadDTO);
+                    });
+                    return callback(arr1);
+                });
+            });
+        }catch(err){
+            return res.send(new Response500(err.message,err)); 
+        }
+    }
+
+    consultaModulosController(req,res,callback){
+        try{
+            req.getConnection((err,conn)=>{
+                if(err)return res.send(new Response500(err.message,err));
+
+                let query="SELECT * FROM  tbl_modulos pa where pa.es_activo='S'";
+
+                conn.query(query,(err,rows)=>{
+                    if(err)return res.send(new Response500(err.sqlMessage,err));
+
+                    var arr1 = new Array();
+                    
+                    var data=JSON.parse(JSON.stringify(rows))
+
+                    data.forEach(r=>{
+                        var objModuloDTO=new ModuloDTO(
+                            r.secuencia_modulo,
+                            r.nombre);
+                        arr1.push(objModuloDTO);
                     });
                     return callback(arr1);
                 });
